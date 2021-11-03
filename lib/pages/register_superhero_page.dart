@@ -10,7 +10,7 @@ class RegisterSuperheroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final superheroeService = Provider.of<SuperheroService>(context);
+    final SuperheroService  superheroeService = Provider.of<SuperheroService>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -42,7 +42,9 @@ class RegisterSuperheroPage extends StatelessWidget {
                 "Actualizar Experiencia",
                 style: TextStyle(color: Colors.white),
               ),
-              onPressed: () {},
+              onPressed: () {
+                superheroeService.updateExperience(50);
+              },
             ),
             MaterialButton(
               color: Colors.deepPurpleAccent,
@@ -50,7 +52,9 @@ class RegisterSuperheroPage extends StatelessWidget {
                 "Añadir Superpoderes",
                 style: TextStyle(color: Colors.white),
               ),
-              onPressed: () {},
+              onPressed: () {
+                superheroeService.addPowers();
+              },
             ),
           ],
         ),
